@@ -10,6 +10,7 @@ class User(models.Model):
 
 class Office(models.Model):
     name = models.CharField(max_length=50)
+    logo = models.ImageField()
 
 
 class City(models.Model):
@@ -25,5 +26,5 @@ class Flight(models.Model):
     capacity = models.IntegerField()
     flight_time = models.DateTimeField()
     arrival_time = models.DateTimeField()
-    # source = models.ForeignKey(City, on_delete=models.CASCADE)
-    # destination = models.ForeignKey(City, on_delete=models.CASCADE)
+    source = models.CharField(max_length=50)
+    destination = models.CharField(max_length=50)
